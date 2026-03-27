@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>HOME Page</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <script src="/js/app.s"></script>
+        
+    </head>
+    <body>
+    <%- include('../partials/header') %>
+
+    <div class="error-message">
+            
+            <h2><%= errorType %></h2>
+    
+    </div>
+        
+    <%- include('routes') %>
+        <%- include('../partials/footer') %>
+
+    </body>
+</html>
