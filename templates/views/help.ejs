@@ -1,13 +1,22 @@
 <html>
-    <head>
-        <title>HELP Page</title>
-        <link rel="stylesheet" href="/css/styles.css">
-    </head>
-    <body>
-        <%- include('../partials/header') %>
-        
-        <h2><%= helpText %></h2>
 
-        <%- include('../partials/footer') %>
-    </body>
+<head>
+  <title>HELP Page</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/images/bluedrop.svg">
+</head>
+
+<body>
+  <div class="main content">
+    <%- include('../partials/header') %>
+
+    <h2>
+      use this page to get your weather information!
+    </h2>
+    <h2><%= helpText %></h2>
+  </div>
+
+  <%- include('../partials/footer') %>
+</body>
+
 </html>
