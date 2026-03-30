@@ -1,11 +1,112 @@
+/* This rule styles all <h1> headings on the page */
 h1{
-    color:rgb(0, 255, 13);
+    color: green; /* Changes the text color of the heading to green */
 }
 
-img{
-    width: 100px;
+/* This rule applies to all <img> elements */
+img {
+    width: 100px; /* Sets the image width to 100 pixels */
 }
 
+/* Styles applied to the entire webpage body */
+body{
+    font-family: Arial, Helvetica, sans-serif; 
+    /* Sets the font style. If Arial is not available, it will use Helvetica,
+       and if that is not available it will use the default sans-serif font */
+
+    max-width: 650px; 
+    /* Limits the maximum width of the webpage content to 650px */
+
+    margin: 0px auto; 
+    /* Centers the page horizontally by setting left and right margins to auto */
+
+    padding:0px 16px; 
+    /* Adds space inside the body on the left and right sides */
+
+    display: flex; 
+    /* Turns the body into a flex container for flexible layout control */
+
+    flex-direction: column; 
+    /* Stacks elements vertically inside the flex container */
+
+    min-height: 100vh;
+    /* Ensures the page height is at least the height of the screen */
+}
+
+/* Styles the footer section at the bottom of the page */
+footer {
+    margin-top: auto; 
+    /* Pushes the footer to the bottom of the page when using flex layout */
+
+    text-align:center;
+    /* Centers the text inside the footer */
+
+    padding: 20px 0;
+    /* Adds vertical spacing inside the footer */
+
+    border-top: 2px solid black ;
+    /* Adds a top border line to separate the footer from content above */
+
+    color: #888888;
+    /* Sets the text color to a light gray */
+
+    font-size: 0.9rem;
+    /* Makes the footer text slightly smaller than normal text */
+}
+
+/* Styles the header section at the top of the page */
+header {
+    margin-bottom: 20px;
+    /* Adds space below the header */
+
+    border-bottom: 2px solid black;
+    /* Adds a bottom border to visually separate the header from the page content */
+
+    padding-bottom: 10px;
+    /* Adds space between the header content and the bottom border */
+
+    text-align:center;
+    /* Centers all content inside the header */
+}
+
+/* Adds spacing between the navigation links (Home, About, Help) */
+header a {
+    margin-right: 15px;
+    /* Adds space to the right of each link */
+
+    text-decoration: none; 
+    /* Removes the default underline from links */
+
+    color: green 
+    /* Sets the link color to green */
+}
+
+/* Style applied when the mouse hovers over the links */
+header a:hover {
+    text-decoration: underline; 
+    /* Shows underline when the user moves the mouse over the link */
+}
+
+/* Styles the main heading inside the header */
+header h1{
+    font-size: 60px;
+    /* Makes the heading text large */
+
+    text-align: center;
+    /* Centers the heading text */
+
+    margin: 40px 40px;
+    /* Adds space around the heading */
+}
+
+/* Used for displaying error messages */
 .error-message{
     color: red;
+    /* Makes error messages appear in red */
+}
+
+/* Main content wrapper to push footer down */
+.main-content {
+    flex-grow: 1;
+    /* Allows this section to grow and fill available space in the flex container */
 }
