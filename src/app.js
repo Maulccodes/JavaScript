@@ -2,6 +2,8 @@ const express = require('express') //load the express package
 const app = express() // make an instance of express package
 const port = 3000
 const path = require('path');
+const {printWeather} = require('./utils/weather');
+const { error } = require('console');
 
 //console.log("Starting server now.")
 //app.com - Home Page
@@ -61,8 +63,37 @@ app.get('/help', (req, res) => {
 
 //WEATHER Page -> '/weather
 app.get('/weather', (req, res) => {
-  res.send('Hello Welcome to my Express App WEATHER page!!')
+  if (!req.query.city) {
+    res.send({
+      error: 'The city is missing'
+    })
+  }
+  else {
+    printWeather(req.query.city,(error, weatherData)=>{
+      if(error){
+        return res.send({error:error.message})
+      }
+      else{
+        res.send({weather:weatherData})
+      }
+    })
+  }
+
 })
+
+/*app.get('/products', (req, res) => {
+  //console.log(req.query.search.);
+  if(!req.query.search){
+    res.send({
+      error:'The search term is missing'
+    })
+  }
+  else
+  res.send({
+    products : []
+  })
+})
+*/
 
 //404 errors
 app.use('/help', (req,res)=>{
